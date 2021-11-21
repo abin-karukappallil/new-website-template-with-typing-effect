@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Abin Karukappallil</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <img src="img/logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <img src="img/menu.png" class="menu-icon">
+        </nav>
+        <div id='browser'>
+            <div id='browser-bar'>
+              <div class='circles'></div>
+              <div class='circles'></div>
+              <div class='circles'></div>
+              <p>Contact Me</p>
+              <span class='arrow entypo-resize-full'></span>
+            </div>
+            <div id='content'>
+              <div id='left'>
+                <div id='map'>
+                  <p>Where To Find Us</p>
+                  <div class='map-locator'>
+                    <div class='tooltip'>
+                      <ul>
+                        <li>
+                          <span class='entypo-location'></span>
+                          <span class='selectedLocation'>India,Kerala,Pala</span>
+                        </li>
+                        <li>
+                          <span class='entypo-mail'></span>
+                          <a href='#'>Abin Thomas</a>
+                        </li>
+                        <li>
+                          <span class='entypo-phone'></span>
+                          00000-00000
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='zoom'></div>
+                </div>
+                
+              </div>
+              <div id='right'>
+                <p>Connect</p>
+                <div id='social'>
+                  <a class='social'>
+                    <span class='entypo-facebook'></span>
+                  </a>
+                  <a class='social'>
+                    <span class='entypo-twitter'></span>
+                  </a>
+                  <a class='social'>
+                    <span class='entypo-linkedin'></span>
+                  </a>
+                  <a class='social'>
+                    <span class='entypo-gplus'></span>
+                  </a>
+                  <a class='social'>
+                    <span class='entypo-instagrem'></span>
+                  </a>
+                </div>
+                <form>
+                  <p>Get in Contact</p>
+                  <input placeholder='Email' type='email'>
+                  <input placeholder='Subject' type='text'>
+                  <textarea placeholder='Message' rows='4'></textarea>
+                  <input placeholder='Send' type='submit'>
+                </form>
+                <p>other way</p>
+                <p class='other entypo-mail'>
+                  <a href='mailto:abinthomasggllc@gmail.com'>abinthomasggllc@gmail.com</a>
+                </p>
+                <p class='call'>0000000000</p>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+    <script>
+        $("#location-bar a").click(function(event){
+  event.preventDefault();
+  
+  var $this = $(this),
+      $li = $this.parent(),
+      selectedMap = $this.attr("href"),
+      selectedLocation = $this.data('location');
+ 
+  $li.addClass('active').siblings('li').removeClass('active');
+
+  //Update #map bkimage with the image from the location
+  $('#map').css('background-image', 'url(' + selectedMap + ')');  
+  //update tooltip 'address'
+  $('.selectedLocation').text(selectedLocation);
+});
+    </script>
+</body>
+</html>
